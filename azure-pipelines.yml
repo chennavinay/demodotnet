@@ -1,10 +1,19 @@
 # ASP.NET
+- task: SonarCloudPrepare@1
+  inputs:
+    SonarCloud: 'SonarCloud'
+    organization: 'chennavinay-github'
+    scannerMode: 'MSBuild'
+    projectKey: 'chennavinay_demodotnet'
 # Build and test ASP.NET projects.
 # Add steps that publish symbols, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
 trigger:
 - master
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
 
 pool:
   vmImage: 'windows-latest'
