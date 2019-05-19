@@ -1,9 +1,6 @@
 # ASP.NET
 trigger:
 - master
-- task: SonarCloudPublish@1
-  inputs:
-    pollingTimeoutSec: '300'
 
 pool:
   vmImage: 'windows-latest'
