@@ -39,3 +39,6 @@ steps:
 # Add steps that publish symbols, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/apps/aspnet/build-aspnet-4
 
+- task: SonarCloudPublish@1
+  inputs:
+    pollingTimeoutSec: '300'
